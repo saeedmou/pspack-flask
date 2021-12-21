@@ -3,6 +3,7 @@ import time
 from flask import Flask, render_template, request
 from urllib.parse import unquote_plus
 from sender import send
+from switcher import myLED, myLEDOn, myLEDOff
 app = Flask(__name__)
 
 
@@ -19,6 +20,10 @@ def index():
 
     return render_template("index.html", version=ua_part)
 
+@app.route("/led")
+def ss():
+    myLED()
+    return "Blink"
 
 @app.route("/log/<msg>")
 def log(msg):
@@ -27,6 +32,7 @@ def log(msg):
         # success message, send HEN
         time.sleep(1)
         print(f"Sending golden hen to {request.remote_addr}")
+        myLED()
         send(request.remote_addr, 9020, "payload/goldhen_2.0b_900.bin")
 
     print(msg)
