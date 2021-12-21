@@ -1,5 +1,5 @@
 import os
-
+import time
 from flask import Flask, render_template, request
 from urllib.parse import unquote_plus
 from sender import send
@@ -25,6 +25,7 @@ def log(msg):
     msg = unquote_plus(msg)
     if "done" in msg or "already" in msg:
         # success message, send HEN
+        time.sleep(1)
         print(f"Sending golden hen to {request.remote_addr}")
         send(request.remote_addr, 9020, "payload/goldhen_2.0b_900.bin")
 
