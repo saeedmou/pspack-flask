@@ -28,30 +28,13 @@ def index():
     return render_template("jb.html", version=ua_part)
 
 
+@app.route("/relay/<val>")
+def relayHandler(val): 
+    return relay(val=="on" or val=="1")
 
-@app.route("/relay/on")
-def relayOnHandler():   
-    return relay(True)
-
-@app.route("/relay/off")
-def relayOffHandler():   
-    return relay(False)
-
-@app.route("/led/1/on")
-def led1OnHandler():   
-    return led(1,True)
-
-@app.route("/led/1/off")
-def led1OffHandler():   
-    return led(1,False)
-
-@app.route("/led/2/on")
-def led2OnHandler():   
-    return led(2,True)
-
-@app.route("/led/2/off")
-def led2OffHandler():   
-    return led(2,False)
+@app.route("/led/<int:ind>/<val>")
+def ledHandler(ind,val):   
+    return led(ind,val=="on" or val=="1")
 
 @app.route("/payload/<pname>")
 def payloadsender(pname):
