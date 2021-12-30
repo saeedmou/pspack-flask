@@ -8,10 +8,10 @@ from sender import send
 from switcher import relay, led
 app = Flask(__name__)
 
-@app.route('/jb')
+@app.route('/menu')
 def menu():
     ua = request.headers.get("User-Agent", None)
-    return render_template("jb.html")
+    return render_template("menu.html")
 
 
 @app.route('/')
