@@ -1,13 +1,16 @@
 import socket
 
-
 def send(ip, port, file):
-    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM, proto=0)
-    client_socket.settimeout(3000)
-    client_socket.connect((ip, port))
+    clientSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM, proto=0)
+    clientSocket.settimeout(3000)
+    print(ip)
+    print(port)
+    print (file)
+    clientSocket.connect((ip, port))
 
     try:
         with open(file, "rb") as fp:
-            client_socket.sendfile(fp)
+            clientSocket.sendfile(fp)
+            clientSocket.close()
     finally:
-        client_socket.close()
+        clientSocket.close()
