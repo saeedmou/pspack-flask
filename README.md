@@ -88,6 +88,7 @@ sudo reboot
 8. If you connect your PS4 to this RPi, it will get IP address from the DHCP Server on RPi
 
 ### Run the Server Script as a Service
+These steps are from this [refrence](https://devstudioonline.com/article/deploy-python-flask-app-on-linux-server).
 1. create Service config file 
 ```
 sudo nano /etc/systemd/system/ps4jb.service
