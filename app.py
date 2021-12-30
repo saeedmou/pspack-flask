@@ -8,13 +8,13 @@ from sender import send
 from switcher import relay, led
 app = Flask(__name__)
 
-@app.route('/menu')
+@app.route('/')
 def menu():
     ua = request.headers.get("User-Agent", None)
     return render_template("menu.html")
 
 
-@app.route('/')
+@app.route('/jb')
 def index():
     ua = request.headers.get("User-Agent", None)
     try:
@@ -25,7 +25,7 @@ def index():
         print("Not PS4")
         ua_part = ua
     relay(False)
-    return render_template("index.html", version=ua_part)
+    return render_template("jb.html", version=ua_part)
 
 
 
@@ -85,7 +85,7 @@ def log(msg):
         print(f"Sending golden hen to {request.remote_addr}")
         send(request.remote_addr, 9020, "payload/goldhen_2.0b_900.bin")
 
-    elif "ready" in msg or "USB" in msg:
+    elif "ready" in msg:
         #Attach the USB Flash
         time.sleep(1)
         relay(True)
