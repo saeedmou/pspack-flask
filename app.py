@@ -1,9 +1,9 @@
-import os
 import time
 import threading 
 from flask import Flask, render_template, request
 from urllib.parse import unquote_plus
 from sender import send
+from server import servercommander
 # from switcher import myLED, myLEDOn, myLEDOff, myLED1On, myLED1Off
 from switcher import relay, led
 app = Flask(__name__)
@@ -45,18 +45,9 @@ def payloadsender(pname):
     return "OK"
 
 @app.route("/server/<cmd>")
-def servercommander(cmd):
+def servercommanderHandler(cmd):
     cmd = unquote_plus(cmd)
-    if cmd=="shutdown":
-        print("Shutting Down in 1s")
-        time.sleep(1)
-        os.system("sudo shutdown -h now")
-    elif cmd=="reboot":
-        print("Rebooting in 1s")
-        time.sleep(1)
-        os.system("sudo reboot")
-    print(cmd)
-    return "OK"
+    return servercommander(cmd)
 
 @app.route("/log/<msg>")
 def log(msg):
