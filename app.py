@@ -84,13 +84,6 @@ def log(msg):
         relay(False)
         print(f"Sending golden hen to {request.remote_addr}")
         send(request.remote_addr, 9020, "payload/goldhen_2.0b_900.bin")
-
-    elif "ready" in msg:
-        #Attach the USB Flash
-        time.sleep(1)
-        relay(True)
-        start_time = threading.Timer(60,timeoutRelayOff)
-        start_time.start()
     elif "success!" in msg:
         #Deattach the USB
         time.sleep(1)
@@ -98,6 +91,12 @@ def log(msg):
     elif "failed" in msg:
         time.sleep(1)
         relay(False)
+    elif "ready" in msg:
+        #Attach the USB Flash
+        time.sleep(1)
+        relay(True)
+        start_time = threading.Timer(60,timeoutRelayOff)
+        start_time.start()
     print(msg)
     return "OK"
 
