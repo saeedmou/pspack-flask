@@ -95,30 +95,6 @@ def GoldHENFunction(fName):
         f.close()
     else:
         string = "Not Found!"
-
-
-    print(string)
-    # if "done" in msg or "already" in msg:
-    #     # success message, send HEN
-    #     time.sleep(1)
-    #     relay(False)
-    #     print(f"Sending golden hen to {request.remote_addr}")
-    #     send(request.remote_addr, 9020, payloadPath)
-    # elif "success!" in msg:
-    #     #Deattach the USB
-    #     time.sleep(1)
-    #     relay(False)
-    # elif "failed" in msg:
-    #     time.sleep(1)
-    #     relay(False)
-    # elif "ready" in msg:
-    #     #Attach the USB Flash
-    #     time.sleep(1)
-    #     relay(True)
-    #     start_time = threading.Timer(60,timeoutRelayOff)
-    #     start_time.start()
-    # print(msg)
-    print (file_exists)
     return string
 
 def timeoutRelayOff():         # user defined function which adds +10 to given numbe
