@@ -57,7 +57,7 @@ def log(msg):
         time.sleep(1)
         relay(False)
         print(f"Sending golden hen to {request.remote_addr}")
-        send(request.remote_addr, 9020, "payload/goldhen_2.1.1_900.bin")
+        send(request.remote_addr, 9020, "payload/goldhen/GoldHEN-2.1.1/goldhen_2.1.1_900.bin")
     elif "success!" in msg:
         #Deattach the USB
         time.sleep(1)

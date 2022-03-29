@@ -38,6 +38,13 @@
                 </div>
             </div>
         </div>
+
+        <!-- <div class="row">
+            <div class="col">
+
+            </div>
+        </div> -->
+
         <div class="row">
             <div class="col-3">
                 <div class="jumbotron jumbotron-fluid mt-4 p-4">
@@ -64,153 +71,222 @@
             </div>
             <div class="col-9">
 
-
-                <div class="jumbotron mt-4 p-4 text-white">
-                    <h1 class="display-4">Payloads</h1>
-                    <h3 class="lead">Please enable binloader in GoldHEN menu first to enable por 9090</h3>
-                    <hr class="my-4">
-
-
-                    <div class="d-flex justify-content-center ">
-                        <div class="p-2" id="app-dumper">
-                            <button type="button" class="btn btn-primary mybtn"
-                                onclick="console.log('AAAA');httpGet('/payload/goldhen_2.1.1_900.bin')">GoldHEN
-                                2.1.1</button>
+                <div class="row">
+                    <div class="col">
+                        <div class="jumbotron jumbotron-fluid mt-4 p-4">
+                            <div class="container text-white">
+                                <div class="row">
+                                    <div class="col-9">
+                                        <h1 class="display-4">GoldHEN version</h1>
+                                        <p class="lead">Choose your GoldHEN Version, please.</p>
+                                    </div>
+                                    <!-- <div class="col-3">
+                                        <div class="p-2" id="Jailbreakme">
+                                            <a class="btn btn-primary mybtn" href="/jb">PoOObS4 Jailbreak</a>
+                                        </div>
+                                    </div> -->
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="d-flex justify-content-center ">
+                                            <div class="p-2" id="app-dumper">
+                                                <button type="button" class="btn btn-primary mybtn"
+                                                    onclick="console.log('AAAA');httpGet('/payload/goldhen/GoldHEN-2.1.1/goldhen_2.1.1_900.bin')">GoldHEN
+                                                    2.1.1</button>
+                                            </div>
+        
+                                            <div class="p-2">
+                                                <button type="button" class="btn btn-primary mybtn"
+                                                    onclick="console.log('AAAA');httpGet('/payload/permanent-uart.bin')">Permenant
+                                                    UART</button>
+                                            </div>
+        
+                                            <div class="p-2">
+                                                <button type="button" class="btn btn-primary mybtn"
+                                                    onclick="console.log('AAAA');httpGet('/payload/disable-updates.bin')">Disable
+                                                    Updates</button>
+                                            </div>
+        
+        
+                                            <div class="p-2">
+                                                <button type="button" class="btn btn-primary mybtn"
+                                                    onclick="console.log('AAAA');httpGet('/payload/kernel-dumper.bin')">Kernel
+                                                    Dumper</button>
+                                            </div>
+                                            <div class="p-2">
+                                                <button type="button" class="btn btn-primary mybtn"
+                                                    onclick="console.log('AAAA');httpGet('/payload/MiraLoader_Orbis_MIRA_PLATFORM_ORBIS_BSD_900.bin')">MIRA
+                                                    Loader</button>
+                                            </div>
+        
+        
+        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-
-                        <div class="p-2">
-                            <button type="button" class="btn btn-primary mybtn"
-                                onclick="console.log('AAAA');httpGet('/payload/permanent-uart.bin')">Permenant
-                                UART</button>
-                        </div>
-
-                        <div class="p-2">
-                            <button type="button" class="btn btn-primary mybtn"
-                                onclick="console.log('AAAA');httpGet('/payload/disable-updates.bin')">Disable
-                                Updates</button>
-                        </div>
-
-
-                        <div class="p-2">
-                            <button type="button" class="btn btn-primary mybtn"
-                                onclick="console.log('AAAA');httpGet('/payload/kernel-dumper.bin')">Kernel
-                                Dumper</button>
-                        </div>
-                        <div class="p-2">
-                            <button type="button" class="btn btn-primary mybtn"
-                                onclick="console.log('AAAA');httpGet('/payload/MiraLoader_Orbis_MIRA_PLATFORM_ORBIS_BSD_900.bin')">MIRA
-                                Loader</button>
-                        </div>
-
-
-
-                    </div>
-
-                    <hr class="my-4">
-
-                    <div class="d-flex justify-content-center ">
-                        <div class="p-2" id="app-dumper">
-                            <button type="button" class="btn btn-primary mybtn"
-                                onclick="console.log('AAAA');httpGet('/payload/Mira_Orbis_MIRA_PLATFORM_ORBIS_BSD_900.elf')">Mira
-                                Orbis ELF</button>
-                        </div>
-                        <div class="p-2" id="app-2-usb">
-                            <button type="button" class="btn btn-primary mybtn"
-                                onclick="console.log('AAAA');httpGet('/payload/module-dumper.bin')">Module
-                                Dumper</button>
-                        </div>
-
-
-                        <div class="p-2" id="app-2-usb">
-                            <button type="button" class="btn btn-primary mybtn"
-                                onclick="console.log('AAAA');httpGet('/payload/history-blocker.bin')">History
-                                Blocker</button>
-                        </div>
-
-
-                        <div class="p-2">
-                            <button type="button" class="btn btn-primary mybtn"
-                                onclick="console.log('AAAA');httpGet('/payload/restore.bin')">Restore</button>
-                        </div>
-                        <div class="p-2">
-                            <button type="button" class="btn btn-primary mybtn"
-                                onclick="console.log('AAAA');httpGet('/payload/rif-renamer.bin')">RIF Renamer</button>
-                        </div>
-
-
-
-                    </div>
-                    <hr class="my-4">
-                    <div class="d-flex justify-content-center ">
-                        <div class="p-2" id="app-dumper">
-                            <button type="button" class="btn btn-primary mybtn"
-                                onclick="console.log('AAAA');httpGet('/payload/app-dumper.bin')">App Dumper</button>
-                        </div>
-                        <div class="p-2" id="app-2-usb">
-                            <button type="button" class="btn btn-primary mybtn"
-                                onclick="console.log('AAAA');httpGet('/payload/app-2usb.bin')">App 2 USB</button>
-                        </div>
-                        <div class="p-2">
-                            <button type="button" class="btn btn-primary mybtn"
-                                onclick="console.log('AAAA');httpGet('/payload/backup.bin')">Backup</button>
-                        </div>
-                        <div class="p-2">
-                            <button type="button" class="btn btn-primary mybtn"
-                                onclick="console.log('AAAA');httpGet('/payload/disable-aslr.bin')">Disable ASLR</button>
-                        </div>
-
-
-
-
-
-
-                    </div>
-                    <hr class="my-4">
-                    <div class="d-flex justify-content-center ">
-                        <div class="p-2" id="app-dumper">
-                            <button type="button" class="btn btn-primary mybtn"
-                                onclick="console.log('AAAA');httpGet('/payload/enable-browser.bin')">Enable
-                                Browser</button>
-                        </div>
-                        <div class="p-2" id="app-2-usb">
-                            <button type="button" class="btn btn-primary mybtn"
-                                onclick="console.log('AAAA');httpGet('/payload/enable-updates.bin')">Enable
-                                Updates</button>
-                        </div>
-                        <div class="p-2">
-                            <button type="button" class="btn btn-primary mybtn"
-                                onclick="console.log('AAAA');httpGet('/payload/exit-idu.bin')">Exit IDU</button>
-                        </div>
-                        <div class="p-2">
-                            <button type="button" class="btn btn-primary mybtn"
-                                onclick="console.log('AAAA');httpGet('/payload/fan-threshold.bin')">Fan
-                                Threshold</button>
-                        </div>
-                        <div class="p-2">
-                            <button type="button" class="btn btn-primary mybtn"
-                                onclick="console.log('AAAA');httpGet('/payload/ftp.bin')">FTP</button>
-                        </div>
-
-
-
-                    </div>
-                    <hr class="my-4">
-
-                    
-
-
-                    <div class="d-flex justify-content-center ">
-                        <div class="p-2" id="app-dumper">
-                            <button type="button" class="btn btn-primary mybtn"
-                                onclick="console.log('AAAA');httpGet('/payload/todex.bin')">TODEX</button>
-                        </div>
-                                          
-                    <div class="p-2">
-                        <button type="button" class="btn btn-primary mybtn"
-                            onclick="console.log('AAAA');httpGet('/payload/kernel-clock.bin')">Kernel Clock</button>
-                    </div>
                     </div>
                 </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="jumbotron mt-4 p-4 text-white">
+                            <h1 class="display-4">Payloads</h1>
+                            <h3 class="lead">Please enable binloader in GoldHEN menu first to enable por 9090</h3>
+                            <hr class="my-4">
+
+
+                            <div class="d-flex justify-content-center ">
+                                <div class="p-2" id="app-dumper">
+                                    <button type="button" class="btn btn-primary mybtn"
+                                        onclick="console.log('AAAA');httpGet('/payload/goldhen/GoldHEN-2.1.1/goldhen_2.1.1_900.bin')">GoldHEN
+                                        2.1.1</button>
+                                </div>
+
+                                <div class="p-2">
+                                    <button type="button" class="btn btn-primary mybtn"
+                                        onclick="console.log('AAAA');httpGet('/payload/permanent-uart.bin')">Permenant
+                                        UART</button>
+                                </div>
+
+                                <div class="p-2">
+                                    <button type="button" class="btn btn-primary mybtn"
+                                        onclick="console.log('AAAA');httpGet('/payload/disable-updates.bin')">Disable
+                                        Updates</button>
+                                </div>
+
+
+                                <div class="p-2">
+                                    <button type="button" class="btn btn-primary mybtn"
+                                        onclick="console.log('AAAA');httpGet('/payload/kernel-dumper.bin')">Kernel
+                                        Dumper</button>
+                                </div>
+                                <div class="p-2">
+                                    <button type="button" class="btn btn-primary mybtn"
+                                        onclick="console.log('AAAA');httpGet('/payload/MiraLoader_Orbis_MIRA_PLATFORM_ORBIS_BSD_900.bin')">MIRA
+                                        Loader</button>
+                                </div>
+
+
+
+                            </div>
+
+                            <hr class="my-4">
+
+                            <div class="d-flex justify-content-center ">
+                                <div class="p-2" id="app-dumper">
+                                    <button type="button" class="btn btn-primary mybtn"
+                                        onclick="console.log('AAAA');httpGet('/payload/Mira_Orbis_MIRA_PLATFORM_ORBIS_BSD_900.elf')">Mira
+                                        Orbis ELF</button>
+                                </div>
+                                <div class="p-2" id="app-2-usb">
+                                    <button type="button" class="btn btn-primary mybtn"
+                                        onclick="console.log('AAAA');httpGet('/payload/module-dumper.bin')">Module
+                                        Dumper</button>
+                                </div>
+
+
+                                <div class="p-2" id="app-2-usb">
+                                    <button type="button" class="btn btn-primary mybtn"
+                                        onclick="console.log('AAAA');httpGet('/payload/history-blocker.bin')">History
+                                        Blocker</button>
+                                </div>
+
+
+                                <div class="p-2">
+                                    <button type="button" class="btn btn-primary mybtn"
+                                        onclick="console.log('AAAA');httpGet('/payload/restore.bin')">Restore</button>
+                                </div>
+                                <div class="p-2">
+                                    <button type="button" class="btn btn-primary mybtn"
+                                        onclick="console.log('AAAA');httpGet('/payload/rif-renamer.bin')">RIF
+                                        Renamer</button>
+                                </div>
+
+
+
+                            </div>
+                            <hr class="my-4">
+                            <div class="d-flex justify-content-center ">
+                                <div class="p-2" id="app-dumper">
+                                    <button type="button" class="btn btn-primary mybtn"
+                                        onclick="console.log('AAAA');httpGet('/payload/app-dumper.bin')">App
+                                        Dumper</button>
+                                </div>
+                                <div class="p-2" id="app-2-usb">
+                                    <button type="button" class="btn btn-primary mybtn"
+                                        onclick="console.log('AAAA');httpGet('/payload/app-2usb.bin')">App 2
+                                        USB</button>
+                                </div>
+                                <div class="p-2">
+                                    <button type="button" class="btn btn-primary mybtn"
+                                        onclick="console.log('AAAA');httpGet('/payload/backup.bin')">Backup</button>
+                                </div>
+                                <div class="p-2">
+                                    <button type="button" class="btn btn-primary mybtn"
+                                        onclick="console.log('AAAA');httpGet('/payload/disable-aslr.bin')">Disable
+                                        ASLR</button>
+                                </div>
+
+
+
+
+
+
+                            </div>
+                            <hr class="my-4">
+                            <div class="d-flex justify-content-center ">
+                                <div class="p-2" id="app-dumper">
+                                    <button type="button" class="btn btn-primary mybtn"
+                                        onclick="console.log('AAAA');httpGet('/payload/enable-browser.bin')">Enable
+                                        Browser</button>
+                                </div>
+                                <div class="p-2" id="app-2-usb">
+                                    <button type="button" class="btn btn-primary mybtn"
+                                        onclick="console.log('AAAA');httpGet('/payload/enable-updates.bin')">Enable
+                                        Updates</button>
+                                </div>
+                                <div class="p-2">
+                                    <button type="button" class="btn btn-primary mybtn"
+                                        onclick="console.log('AAAA');httpGet('/payload/exit-idu.bin')">Exit IDU</button>
+                                </div>
+                                <div class="p-2">
+                                    <button type="button" class="btn btn-primary mybtn"
+                                        onclick="console.log('AAAA');httpGet('/payload/fan-threshold.bin')">Fan
+                                        Threshold</button>
+                                </div>
+                                <div class="p-2">
+                                    <button type="button" class="btn btn-primary mybtn"
+                                        onclick="console.log('AAAA');httpGet('/payload/ftp.bin')">FTP</button>
+                                </div>
+
+
+
+                            </div>
+                            <hr class="my-4">
+
+
+
+
+                            <div class="d-flex justify-content-center ">
+                                <div class="p-2" id="app-dumper">
+                                    <button type="button" class="btn btn-primary mybtn"
+                                        onclick="console.log('AAAA');httpGet('/payload/todex.bin')">TODEX</button>
+                                </div>
+
+                                <div class="p-2">
+                                    <button type="button" class="btn btn-primary mybtn"
+                                        onclick="console.log('AAAA');httpGet('/payload/kernel-clock.bin')">Kernel
+                                        Clock</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
             </div>
         </div>
 
