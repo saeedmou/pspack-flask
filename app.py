@@ -51,13 +51,17 @@ def servercommanderHandler(cmd):
 
 @app.route("/log/<msg>")
 def log(msg):
+    payloadPath='payload/goldhen/GoldHEN-2.1.1/goldhen_2.1.1_900.bin'
+    if(request.args.get('payloadName')):
+        print(request.args.get('payloadName'))
+        payloadPath=request.args.get('payloadName')
     msg = unquote_plus(msg)
     if "done" in msg or "already" in msg:
         # success message, send HEN
         time.sleep(1)
         relay(False)
         print(f"Sending golden hen to {request.remote_addr}")
-        send(request.remote_addr, 9020, "payload/goldhen/GoldHEN-2.1.1/goldhen_2.1.1_900.bin")
+        send(request.remote_addr, 9020, payloadPath)
     elif "success!" in msg:
         #Deattach the USB
         time.sleep(1)
