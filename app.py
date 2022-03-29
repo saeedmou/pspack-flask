@@ -6,6 +6,7 @@ from sender import send
 from server import servercommander
 # from switcher import myLED, myLEDOn, myLEDOff, myLED1On, myLED1Off
 from switcher import relay, led
+import os.path
 app = Flask(__name__)
 
 @app.route('/')
@@ -77,6 +78,48 @@ def log(msg):
         start_time.start()
     print(msg)
     return "OK"
+
+@app.route("/GoldHEN/<fName>")
+def GoldHENFunction(fName):
+    fName = unquote_plus(fName)
+    bPath= "payload/goldhen/GoldHEN-2.2.2/"
+    fPath=bPath + fName + '.md'
+    file_exists = os.path.exists(fPath)
+    if (file_exists):
+        f = open(fPath,'r')
+        string = ""
+        while 1:
+            line = f.readline()
+            if not line:break
+            string += line +"</br>"
+        f.close()
+    else:
+        string = "Not Found!"
+
+
+    print(string)
+    # if "done" in msg or "already" in msg:
+    #     # success message, send HEN
+    #     time.sleep(1)
+    #     relay(False)
+    #     print(f"Sending golden hen to {request.remote_addr}")
+    #     send(request.remote_addr, 9020, payloadPath)
+    # elif "success!" in msg:
+    #     #Deattach the USB
+    #     time.sleep(1)
+    #     relay(False)
+    # elif "failed" in msg:
+    #     time.sleep(1)
+    #     relay(False)
+    # elif "ready" in msg:
+    #     #Attach the USB Flash
+    #     time.sleep(1)
+    #     relay(True)
+    #     start_time = threading.Timer(60,timeoutRelayOff)
+    #     start_time.start()
+    # print(msg)
+    print (file_exists)
+    return string
 
 def timeoutRelayOff():         # user defined function which adds +10 to given numbe
     print ("Timeout call")
