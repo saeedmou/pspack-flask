@@ -115,7 +115,7 @@ sudo chmod 644 /etc/systemd/system/ps4jb.service
 ```
 sudo systemctl daemon-reload
 sudo systemctl enable ps4jb.service 
-dufo systemctl start ps4jb.service
+sudo systemctl start ps4jb.service
 ```
 
 5. Now service is ready to use.
@@ -132,3 +132,39 @@ dufo systemctl start ps4jb.service
     ```
     sudo systemctl reload ps4jb.service
     ```
+
+## Development
+### IDE
+[Visual Studio Code](https://code.visualstudio.com/download) with these extensions by [Microsoft](https://marketplace.visualstudio.com/publishers/Microsoft):
+
+1. [Remote - SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh)
+2. [Remote - SSH: Editing Configuration Files](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh-edit)
+
+Add the following in .ss/config file
+```
+Host ps4jb
+  HostName ps4jb
+  User pi
+```
+or add the host manually.
+### Making changes
+First stop the service:
+
+```
+sudo systemctl stop ps4jb.service
+```
+
+Then run the following code to modify and see the results:
+
+```
+nodemon --exec python3  app.py --ext py,json,css,js,htm,html
+```
+
+after finishing the modification,  press
+```
+CTRL+C
+```
+to quit and run the following or reboot the device:
+```
+sudo systemctl start ps4jb.service
+```
