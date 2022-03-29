@@ -52,7 +52,8 @@ def servercommanderHandler(cmd):
 
 @app.route("/log/<msg>")
 def log(msg):
-    payloadPath='payload/goldhen/GoldHEN-2.1.1/goldhen_2.1.1_900.bin'
+    payloadPath='payload/goldhen/GoldHEN-2.2.2/goldhen_2.2.2_900.bin'
+    # payloadPath='payload/goldhen/GoldHEN-2.1.1/goldhen_2.1.1_900.bin'
     if(request.args.get('payloadName')):
         print(request.args.get('payloadName'))
         payloadPath=request.args.get('payloadName')
