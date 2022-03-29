@@ -7,6 +7,7 @@ from server import servercommander
 # from switcher import myLED, myLEDOn, myLEDOff, myLED1On, myLED1Off
 from switcher import relay, led
 import os.path
+from bcolors import bcolors,printColor
 app = Flask(__name__)
 
 @app.route('/')
@@ -63,7 +64,9 @@ def log(msg):
         time.sleep(1)
         relay(False)
         print(f"Sending golden hen to {request.remote_addr}")
-        send(request.remote_addr, 9020, payloadPath)
+        result=send(request.remote_addr, 9020, payloadPath)
+        print(f"{bcolors.OKCYAN}{result}{bcolors.ENDC}")
+        return result
     elif "success!" in msg:
         #Deattach the USB
         time.sleep(1)
@@ -77,6 +80,7 @@ def log(msg):
         relay(True)
         start_time = threading.Timer(60,timeoutRelayOff)
         start_time.start()
+        printColor(bcolors.OKBLUE,msg)
     print(msg)
     return "OK"
 
@@ -118,3 +122,5 @@ def add_header(r):
 if __name__ == '__main__':
     led(2,True)
     app.run(host='0.0.0.0', port=1337)
+
+

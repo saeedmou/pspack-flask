@@ -53,20 +53,23 @@
         }
     </style>
     <script>
-        function allset() {
+        function allset(message) {
             document.getElementById("loader").style.display = "none";
-            document.getElementById("allset").style.display = "block";
+            document.getElementById("awaiting").style.display = "none";
+
+            document.getElementById("messenger").innerText=message;
+            document.getElementById("messenger").style.display = "block";
         }
 
         function awaitpl() {
             document.getElementById("loader").style.display = "none";
             document.getElementById("awaiting").style.display = "block";
         }
-    </script>
-    
-        <script src="{{url_for('static', filename='logging.js')}}"></script>
-        <script src="{{url_for('static', filename='int64.js')}}"></script>
 
+    </script>
+
+    <script src="{{url_for('static', filename='logging.js')}}"></script>
+    <script src="{{url_for('static', filename='int64.js')}}"></script>
     <script src="{{url_for('static', filename='9.0.0/rop.js')}}"></script>
     <script src="{{url_for('static', filename='9.0.0/kexploit.js')}}"></script>
     <script src="{{url_for('static', filename='9.0.0/webkit.js')}}"></script>
@@ -83,7 +86,7 @@
         <span class="j">${jndi:ldap://nsa.gov}</span>
     </div>
 
-    <div id="allset" class="info" style="display:none;">
+    <div id="messenger" class="info" style="display:none;">
         You're all set!
     </div>
 

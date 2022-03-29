@@ -15,6 +15,15 @@ function logMessage(msg) {
         xhr.onerror = function () {
                 alert("Failed to log: message" + msg)
         }
+        xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                //   console.log(xhr.response);
+                  if (xhr.response!="OK"){
+                        allset(xhr.response);
+                  }
+                }
+              }
+        xhr.on
         xhr.send();
 }
 
