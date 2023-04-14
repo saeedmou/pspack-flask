@@ -87,7 +87,7 @@ def log(msg):
 @app.route("/GoldHEN/<fName>")
 def GoldHENFunction(fName):
     fName = unquote_plus(fName)
-    bPath= "payload/goldhen/GoldHEN-2.2.2/"
+    bPath= "payload/goldhen/GoldHEN-2.3/"
     fPath=bPath + fName + '.md'
     file_exists = os.path.exists(fPath)
     if (file_exists):
