@@ -18,7 +18,7 @@ All credit to the team behind pOOBs4
 ## Exploiting
 
 1. Run app `python3 app.py`. Might need to run as root to bind to port 1337
-2. In the command line the IP address to navigate to will be printed e.g `* Running on http://192.168.1.200:1337/ (Press CTRL+C to quit)`
+2. In the command line the IP address to navigate to will be printed e.g `* Running on http://192.168.1.100:1337/ (Press CTRL+C to quit)`
 3. Navigate to port 1337 on that IP on your PS4
 4. Same as psOOBs4
 5. GoldHEN should be sent once the server detects success via log messages
@@ -50,7 +50,7 @@ sudo nano /etc/dhcpcd.conf
 ```
 # Example static IP configuration:
 interface eth0
-static ip_address=192.168.1.5
+static ip_address=192.168.1.100
 static routers=192.168.1.1
 static domain_name_servers=192.168.1.1 8.8.8.8
 ```
@@ -84,7 +84,7 @@ sudo service dnsmasq restart
 ```
 sudo reboot
 ```
-7. Now you have ssh access to your RPi with the IP=192.168.1.5
+7. Now you have ssh access to your RPi with the IP=192.168.1.100
 8. If you connect your PS4 to this RPi, it will get IP address from the DHCP Server on RPi
 
 ### Run the Server Script as a Service
