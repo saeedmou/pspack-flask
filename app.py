@@ -53,7 +53,9 @@ def servercommanderHandler(cmd):
 
 @app.route("/log/<msg>")
 def log(msg):
-    payloadPath='payload/goldhen/GoldHEN-2.2.2/goldhen_2.2.2_900.bin'
+    disableUpdatePath='payload/disable-updates.bin'
+    payloadPath='payload/goldhen/GoldHEN-2.4b16.2/goldhen.bin'
+    # payloadPath='payload/goldhen/GoldHEN-2.3/goldhen_2.3_900.bin'
     # payloadPath='payload/goldhen/GoldHEN-2.1.2/goldhen_2.1.2_900.bin'
     if(request.args.get('payloadName')):
         print(request.args.get('payloadName'))
@@ -66,6 +68,14 @@ def log(msg):
         print(f"Sending golden hen to {request.remote_addr}")
         result=send(request.remote_addr, 9020, payloadPath)
         print(f"{bcolors.OKCYAN}{result}{bcolors.ENDC}")
+
+        #Disabling Update Payload; Start
+        time.sleep(5)
+        print(f"Sending Disable Update to {request.remote_addr}")
+        result2=send(request.remote_addr, 9020, disableUpdatePath)
+        print(f"{bcolors.OKCYAN}{result2}{bcolors.ENDC}")
+        #Disabling Update Payload; End
+
         return result
     elif "success!" in msg:
         #Deattach the USB
@@ -87,7 +97,7 @@ def log(msg):
 @app.route("/GoldHEN/<fName>")
 def GoldHENFunction(fName):
     fName = unquote_plus(fName)
-    bPath= "payload/goldhen/GoldHEN-2.3/"
+    bPath= "payload/goldhen/GoldHEN-2.4b16.2/"
     fPath=bPath + fName + '.md'
     file_exists = os.path.exists(fPath)
     if (file_exists):
