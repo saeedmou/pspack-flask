@@ -72,7 +72,7 @@ def log(msg):
         #Disabling Update Payload; Start
         time.sleep(5)
         print(f"Sending Disable Update to {request.remote_addr}")
-        result2=send(request.remote_addr, 9020, disableUpdatePath)
+        result2=send(request.remote_addr, 9090, disableUpdatePath)
         print(f"{bcolors.OKCYAN}{result2}{bcolors.ENDC}")
         #Disabling Update Payload; End
 
