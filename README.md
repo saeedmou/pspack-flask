@@ -105,19 +105,24 @@ ghp_BbV0GnjURK5vHNNlEOM3aSuSEwAKkd31Rabs
 ```
 sudo apt install git
 ```
-3. Goto directory:
+4. Set email and Name:
+```
+--global user.email "EMAIL"
+--global user.name "NAME"
+```
+4. Goto directory:
 ```
 cd /home/pi/
 ```
-4. clone the repository
+5. clone the repository
 ```
 git clone https://saeedmou:TOKEN@github.com/saeedmou/pspack-flask.git
 ```
-5. goto `pspack-flask` directory and run:
+6. goto `pspack-flask` directory and run:
 ```
 python3 -m pip install -r requirements.txt
 ```
-6. Then run the following code to modify and see the results:
+7. Then run the following code to modify and see the results:
 ```
 flask run --reload --host=0.0.0.0 --port=1337
 ```
