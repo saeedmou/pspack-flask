@@ -32,11 +32,11 @@ All credit to the team behind pOOBs4
 ## How to config Raspberry Pi
 To run this git project on your raspberry pi do as following:
 ### Install and initializing the OS
-1. burn the raspbbery Pi`s OS image on a sd card.
-2. put a empty file named "ssh" on the boot dirve.
-3. Insert the sd card in your RPi
-4. config your RPi as allways (expand file system ...)
-5. update and upgrade the packages
+1. burn the raspbbery Pi`s OS image on a sd card using Raspberry Pi Imager.
+2. Define a user and set password in Raspberry Pi Imager and enable ssh.
+4. Insert the sd card in your RPi
+5. config your RPi as allways (expand file system ...)
+6. update and upgrade the packages
 ```
 sudo apt update
 sudo apt full-upgrade
@@ -96,7 +96,31 @@ sudo reboot
 ```
 7. Now you have ssh access to your RPi with the IP=192.168.1.100
 8. If you connect your PS4 to this RPi, it will get IP address from the DHCP Server on RPi
-
+### Clone git repository.
+1. First create a Token with repo permisions "TOKEN" like:
+```
+ghp_BbV0GnjURK5vHNNlEOM3aSuSEwAKkd31Rabs
+```
+3. install git on RBP:
+```
+sudo apt install git
+```
+3. Goto directory:
+```
+cd /home/pi/
+```
+4. clone the repository
+```
+git clone https://saeedmou:TOKEN@github.com/saeedmou/pspack-flask.git
+```
+5. goto `pspack-flask` directory and run:
+```
+python3 -m pip install -r requirements.txt
+```
+6. Then run the following code to modify and see the results:
+```
+flask run --reload --host=0.0.0.0 --port=1337
+```
 ### Run the Server Script as a Service
 These steps are from this [refrence](https://devstudioonline.com/article/deploy-python-flask-app-on-linux-server).
 1. create Service config file 
