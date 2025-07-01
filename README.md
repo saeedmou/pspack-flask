@@ -51,7 +51,7 @@ sudo apt clean
 sudo reboot
 ```
 
-### Config the IP and DHCP Server
+### Config the IP and DHCP Server (in old OS. new one use networkMan)
 1. Open DHCPCD to setup the static IP address
 ```
 sudo nano /etc/dhcpcd.conf
@@ -106,16 +106,20 @@ sudo nano /etc/systemd/system/ps4jb.service
 2. Put this code in it then Ctrl+X, Y, enter
 ```
 [Unit]
-Description=My PS4 J
-After=multi-user.target
+Description=PS4 Jailbreak Server
+After=network.target
 
 [Service]
-WorkingDirectory=/home/pi/Downloads/pspack-flask
-ExecStart=/usr/bin/python3 /home/pi/Downloads/pspack-flask/app.py > /home/pi/Downloads/pspack-flask/log.txt
-Type=idle
+User=pi
+WorkingDirectory=/home/pi/pspack-flask
+ExecStart=/home/pi/pspack-flask/venv/bin/flask run --host=0.0.0.0 --port=1337
+Environment="FLASK_APP=app.py"
+Environment="PATH=/home/pi/pspack-flask/venv/bin"
+Restart=always
 
 [Install]
 WantedBy=multi-user.target
+
 ```
 3. Change the service file permission to 644
 ```
@@ -142,7 +146,12 @@ sudo systemctl start ps4jb.service
     ```
     sudo systemctl reload ps4jb.service
     ```
-
+7. Redirect port 80 to port 1337. a safe method
+```
+sudo apt install iptables iptables-persistent
+sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 1337
+sudo netfilter-persistent save
+```
 ## Development
 ### IDE
 [Visual Studio Code](https://code.visualstudio.com/download) with these extensions by [Microsoft](https://marketplace.visualstudio.com/publishers/Microsoft):
