@@ -38,9 +38,19 @@ To run this git project on your raspberry pi do as following:
 4. config your RPi as allways (expand file system ...)
 5. update and upgrade the packages
 ```
-sudo apt-get update
-sudo apt-get upgrade
+sudo apt update
+sudo apt full-upgrade
 ```
+6. Clean old packages.
+```
+sudo apt autoremove
+sudo apt clean
+```
+7. Reboot RBP
+```
+sudo reboot
+```
+
 ### Config the IP and DHCP Server
 1. Open DHCPCD to setup the static IP address
 ```
