@@ -1,8 +1,8 @@
 from gpiozero import LED
 from signal import pause
-relayObj = LED(4)
-led1 = LED(17)
-led2 = LED(27)
+relayObj = LED(26)
+led1 = LED(19)
+led2 = LED(13)
 
 def relay(state=False):
     # led.blink()
