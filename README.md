@@ -165,7 +165,10 @@ sudo systemctl stop ps4jb.service
 ```
 
 Then run the following code to modify and see the results:
-
+```
+flask run --reload --host=0.0.0.0 --port=1337
+```
+or if Nodemon is installed:
 ```
 nodemon --exec python3  app.py --ext py,json,css,js,htm,html
 ```
