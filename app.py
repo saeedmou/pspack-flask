@@ -56,8 +56,8 @@ def servercommanderHandler(cmd):
 @app.route("/log/<msg>")
 def log(msg):
     disableUpdatePath='payload/disable-updates.bin'
-    payloadPath='payload/goldhen/GoldHEN-v2.4b18.3/goldhen.bin'
-    # payloadPath='payload/goldhen/GoldHEN-2.4b16.2/goldhen.bin'
+    # payloadPath='payload/goldhen/GoldHEN-v2.4b18.3/goldhen.bin'
+    payloadPath='payload/goldhen/GoldHEN-2.4b16.2/goldhen.bin'
     # payloadPath='payload/goldhen/GoldHEN-2.3/goldhen_2.3_900.bin'
     # payloadPath='payload/goldhen/GoldHEN-2.1.2/goldhen_2.1.2_900.bin'
     if(request.args.get('payloadName')):
@@ -100,8 +100,8 @@ def log(msg):
 @app.route("/GoldHEN/<fName>")
 def GoldHENFunction(fName):
     fName = unquote_plus(fName)
-    bPath= "payload/goldhen/GoldHEN-v2.4b18.3/"
-    # bPath= "payload/goldhen/GoldHEN-2.4b16.2/"
+    # bPath= "payload/goldhen/GoldHEN-v2.4b18.3/"
+    bPath= "payload/goldhen/GoldHEN-2.4b16.2/"
 
     fPath=bPath + fName + '.md'
     file_exists = os.path.exists(fPath)

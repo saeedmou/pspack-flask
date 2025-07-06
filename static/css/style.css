@@ -2,16 +2,26 @@
     /* width:100vh;
     height:100vh; */
     /* background-color: #2c7ed1; */
-    background-color: #35589A;
+    /* ** background-color: #35589A; */ 
+    background-color: #447D9B;
 }
 
 .jumbotron{
-    background-color: #370665;
+    /* background-color: #370665; */
+    /* background-color: #F0F4FF; */
+    /* border-radius: 15px; */
+    
+    /* background-color: rgba(255, 255, 255, 0.1); */
+    background-color: #273F4F;
+  
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 15px;
+    backdrop-filter: blur(4px); /* شیشه‌ای و مدرن */
 }
 
 .mybtn{
     background-color: #F14A16;
+    /* background-color: #F14A16; */
     min-width: 100px;
     min-height: 100px;
     font-size: larger;
